@@ -6,7 +6,7 @@ from optparse import OptionParser
 
 """
 Actual port scanner.
-Takes four arguments host, port, timeout, and protocol. 
+Takes three arguments host, port, and timeout. 
 Returns 1024 bits of data grabbed from socket conenct as banner.
 """
 def scanner(host, port, timeout):
