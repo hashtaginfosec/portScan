@@ -12,3 +12,15 @@ Options:
   -s [timeout in seconds], --timeout=[timeout in seconds]
   -T, --TCP
   -U, --UDP
+
+
+For TCP connect scan using scapy script:
+
+Usage: scapyScan.py [options]
+
+Options:
+  -h, --help            show this help message and exit
+  -t target.com, --target=target.com
+  -p PORT, --port=PORT
+  
+  More features coming soom
