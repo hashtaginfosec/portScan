@@ -5,10 +5,10 @@ Python2.x, python-scapy, python optparse, and python logging modules must be ins
 """
 
 from socket import *
-from optparse import OptionParser
 import logging
-logging.getLogger("scapy.runtime").setLevel(logging.ERROR) #Supress scapy info level messages
-from scapy.all import *
+logging.getLogger("scapy.runtime").setLevel(logging.CRITICAL) #Supress scapy info level messages
+from optparse import OptionParser
+import loggingfrom scapy.all import *
 
 """
 Actual port scanners using Scapy.
@@ -142,8 +142,6 @@ def tcp_fin(host, port, timeoutx, results):
 
 if __name__=="__main__":
 
-#Global list named results.
-    #resutls=[]
 
 #Defining our OptionsParser.
 
