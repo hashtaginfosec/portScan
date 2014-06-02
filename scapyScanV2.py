@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 from socket import *
 from optparse import OptionParser
@@ -164,10 +164,17 @@ if __name__=="__main__":
 #            print "You asked to perfrom " + scantype + "\n"
             for port in ports:
                 print("[+] Scanning port " + port)
-                tcp_fin(host, int(port), timeout, results)
+                if options.scantype="c":
+                    tcp_connect(host, int(port), timeout, results)
+                if options.scantype="s":
+                    tcp_stealth(host, int(port), timeout, results)
+                if options.scantype="x":
+                    tcp_xmas(host, int(port), timeout, results)
+                if options.scantype="fin":
+                    tcp_fin(host, int(port), timeout, results)
     
-                for each_result in results:
-                    print "\n" + each_result
+            for each_result in results:
+                print "\n" + each_result
      
                 
 
