@@ -164,13 +164,13 @@ if __name__=="__main__":
 #            print "You asked to perfrom " + scantype + "\n"
             for port in ports:
                 print("[+] Scanning port " + port)
-                if options.scantype="c":
+                if options.scantype=="c":
                     tcp_connect(host, int(port), timeout, results)
-                if options.scantype="s":
+                if options.scantype=="s":
                     tcp_stealth(host, int(port), timeout, results)
-                if options.scantype="x":
+                if options.scantype=="x":
                     tcp_xmas(host, int(port), timeout, results)
-                if options.scantype="fin":
+                if options.scantype=="fin":
                     tcp_fin(host, int(port), timeout, results)
     
             for each_result in results:
