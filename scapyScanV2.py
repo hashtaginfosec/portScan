@@ -170,7 +170,7 @@ if __name__=="__main__":
                     tcp_stealth(host, int(port), timeout, results)
                 if options.scantype=="x":
                     tcp_xmas(host, int(port), timeout, results)
-                if options.scantype=="fin":
+                if options.scantype=="f":
                     tcp_fin(host, int(port), timeout, results)
     
             for each_result in results:
