@@ -8,7 +8,7 @@ from socket import *
 import logging
 logging.getLogger("scapy.runtime").setLevel(logging.CRITICAL) #Supress scapy info level messages
 from optparse import OptionParser
-import loggingfrom scapy.all import *
+from scapy.all import *
 
 """
 Actual port scanners using Scapy.
