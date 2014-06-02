@@ -12,7 +12,8 @@ Takes four arguments host, port, timeout, and protocol.
 Returns 1024 bits of data grabbed from socket conenct as banner.
 """
 
-def scanner(host, port, timeout):
+def tcp_connect(host, port, timeout):
+    print "[+] Performing TCP Connect Scan." + "\n";
     try:
         dst_ip = host
         src_port = RandShort()
@@ -42,8 +43,9 @@ if __name__=="__main__":
     parser.add_option("-t", "--target", dest="host", type="string", metavar="target.com")
     parser.add_option("-p", "--ports", dest="ports", type="string", help="Ports separated by commas.")
     parser.add_option("-s", "--timeout", dest="timeoutx", type="int", metavar="[timeout in seconds]")
-    parser.add_option("-T", "--TCP", dest="stream", metavar="TCP", action = "store_true", default=True)
-    parser.add_option("-U", "--UDP", dest="datagram", metavar="UDP", action = "store_true", default=False)
+    parser.add_option("-S", "--scantype", dest="scantype", type="string", metavar="TCP Connect, TCP Stealth, XMAS, or FIN scan.", default="TCP Connect")
+    #parser.add_option("-T", "--TCP", dest="stream", metavar="TCP", action = "store_true", default=True)
+    #parser.add_option("-U", "--UDP", dest="datagram", metavar="UDP", action = "store_true", default=False)
     (options, args) = parser.parse_args()
 
     if options.host == None or options.ports == None:
@@ -60,5 +62,5 @@ if __name__=="__main__":
             #let's perform a portscan.
             for port in ports:
                 print("[+] Scanning port " + port)
-                scanner(host, int(port), timeout)
+                tcp_connect(host, int(port), timeout)
 
