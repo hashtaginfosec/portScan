@@ -108,7 +108,7 @@ def tcp_xmas(host, port, timeout, results):
 #TCP FIN scan
 
 def tcp_fin(host, port, timeout, results):
-    print "[+] Performing TCP XMAS Scan." + "\n";
+    print "[+] Performing TCP FIN Scan." + "\n";
     try:
         dst_ip = host
         src_port = random.randint(1,65535)
