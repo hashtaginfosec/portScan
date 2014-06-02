@@ -7,12 +7,8 @@ Python2.x, python-scapy, python optparse, and python logging modules must be ins
 from socket import *
 from optparse import OptionParser
 import logging
+logging.getLogger("scapy.runtime").setLevel(logging.ERROR) #Supress scapy info level messages
 from scapy.all import *
-
-#Supress scapy info level messages
-
-logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
-
 
 """
 Actual port scanners using Scapy.
