@@ -1,16 +1,17 @@
 #!/usr/bin/env python
 
+"""
+Python2.x, python-scapy, python optparse, and python logging modules must be installed on local system.
+"""
+
 from socket import *
 from optparse import OptionParser
 import logging
 logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
 from scapy.all import *
-from array import array
 
 """
-Actual port scanner.
-Takes four arguments host, port, timeout, and protocol.
-Returns 1024 bits of data grabbed from socket conenct as banner.
+Actual port scanners using Scapy.
 """
 
 #TCP Connect Scan
