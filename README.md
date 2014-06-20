@@ -25,4 +25,4 @@ Options:
   -s [timeout in seconds], --timeout=[timeout in seconds]
   -S (c) TCP Connect, TCP (s) Stealth, (x)XMAS, or (f) FIN scan., --scantype=(c) TCP Connect, TCP (s) Stealth, (x)XMAS, or (f) FIN scan.
   
-  More features coming soom
+  More features coming soon
