@@ -1,7 +1,8 @@
 portScan
 ========
 
-Simple port scan script in Python3. Work is still in progress.
+Simple port scan script in Python. Work is still in progress.
+portScan.py requires Python3 while scapyScan.py requires Python2.x. I'm working on writing both in same version.
 
 Usage: portScan.py [options]
 
