@@ -149,7 +149,7 @@ if __name__=="__main__":
     parser.add_option("-t", "--target", dest="host", type="string", metavar="target.com")
     parser.add_option("-p", "--ports", dest="ports", type="string", help="Ports separated by commas and no spaces.")
     parser.add_option("-s", "--timeout", dest="timeout", type="int", metavar="[timeout in seconds]", default=10)
-    parser.add_option("-S", "--scantype", dest="scantype", type="string", metavar="(c) TCP Connect, TCP (s) Stealth, (x)XMAS, or (f) FIN scan.", default="c")
+    parser.add_option("-S", "--scantype", dest="scantype", type="string", metavar="(c) TCP Connect, TCP (s) Stealth, or (f) FIN scan.", default="c")
     
     (options, args) = parser.parse_args()
 
@@ -168,8 +168,8 @@ if __name__=="__main__":
                     tcp_connect(host, int(port), timeoutx, results)
                 if options.scantype=="s":
                     tcp_stealth(host, int(port), timeoutx, results)
-                if options.scantype=="x":
-                    tcp_xmas(host, int(port), timeoutx, results)
+            #    if options.scantype=="x":
+            #       tcp_xmas(host, int(port), timeoutx, results)
                 if options.scantype=="f":
                     tcp_fin(host, int(port), timeoutx, results)
     
