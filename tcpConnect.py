@@ -1,10 +1,22 @@
+###########################################################################
+#
+# Need Python version 2.x, scapy, and python module sys installed on system
+#
+# Usage: python tcpConnect.py [hostname] [port]
+#
+# For example:   python tcpConnect.py google.com 80
+#
+###########################################################################
+
+
 from socket import *
 import logging
 logging.getLogger("scapy.runtime").setLevel(logging.CRITICAL) #Supress scapy info level messages
 from scapy.all import *
+import sys
 
 def tcp_connect(host, port):
-    print "[+] Performing TCP Connect Scan." + "\n";
+    print "[+] Performing TCP Connect Scan against " + str(host) +" on port "+ str(port) + "\n";
     try:
         dst_ip = host
         src_port = random.randint(1,65535)
@@ -27,7 +39,9 @@ def tcp_connect(host, port):
         print(e)
 
 if __name__=="__main__":
-    tcp_connect("192.168.0.1", 80)
-
-
-
+    if len(sys.argv) < 2:
+        print "Usage: python tcpConnect.py [hostname] [port]"
+    else:
+        hostname = str(sys.argv[1])
+        portnum = int(sys.argv[2])
+        tcp_connect(hostname, portnum)
